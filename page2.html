@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deploy Vercel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="parallax-bg">
+
+<header class="scroll-anim">
+  <img src="assets/logo.png" class="logo">
+  <h2 class="glow">Deploying to Vercel</h2>
+</header>
+
+<div class="container scroll-anim">
+  <div class="card glass">
+    <a class="btn hover3d" href="https://g71-abiescc-deploy.vercel.app/">Open Deploy Vercel</a>
+  </div>
+</div>
+
+<footer>
+  Created by Abiescc With Asisten AI
+</footer>
+
+<script>
+const elements=document.querySelectorAll(".scroll-anim");
+function showOnScroll(){
+  elements.forEach(el=>{
+    const rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight-60) el.classList.add("show");
+  });
+}
+window.addEventListener("scroll",showOnScroll);
+showOnScroll();
+</script>
+
+</body>
+</html>
