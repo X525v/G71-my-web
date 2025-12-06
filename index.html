@@ -1,40 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>G71 Ultimate Tools</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ABIESCC - G71</title>
 
 <style>
-/* ------------------ FONT ------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* ========================= */
+/* GLOBAL STYLE */
+/* ========================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* ------------------ BACKGROUND ------------------- */
 body {
-    background: linear-gradient(135deg, #0d0d0f, #1a0125, #35004f);
-    background-size: 400% 400%;
-    animation: gradientFlow 10s ease infinite;
-    color: #fff;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #0a0a0f, #151520, #1d1c27, #0d0c16);
+  background-size: 400% 400%;
+  animation: gradientFlow 10s ease infinite;
+  color: white;
+  overflow-x: hidden;
 }
 
+/* Gradient Animation */
 @keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* PARALLAX GLOW */
-.parallax1, .parallax2, .parallax3 {
-    position: fixed;
-    width: 120%;
-    height: 120%;
+::selection {
+  background: #a259ff;
+}
+
+/* ========================= */
+/* PASSWORD SCREEN */
+/* ========================= */
+
+#password-screen {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,15,0.95);
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+#password-screen img {
+  width: 180px;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 0 20px #a259ff);
+}
+
+#password-input {
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 2px solid #a259ff;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 18px;
+  outline: none;
+  transition: 0.3s;
+}
+
+#password-input:focus {
+  box-shadow: 0 0 20px #a259ff;
+}
+
+#password-btn {
+  margin-top: 15px;
+  padding: 12px 30px;
+  border-radius: 12px;
+  border: none;
+  background: #a259ff;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#password-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #a259ff;
+}
+
+/* ========================= */
+/* MAIN CONTENT */
+/* ========================= */
+
+.container {
+  margin-top: 120px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+  font-weight: 900;
+  text-shadow: 0 0 25px #a259ff;
+}
+
+.subtitle {
+  font-size: 20px;
+  opacity: 0.8;
+  margin-bottom: 60px;
+}
+
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
+
+.link-btn {
+  display: block;
+  width: 80%;
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 20px;
+  font-size: 22px;
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(20px);
+  border-radius: 18px;
+  border: 2px solid rgba(162,89,255,0.6);
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Hover 3D */
+.link-btn:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 30px #a259ff;
+}
+
+/* Glow on hover */
+.link-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(162,89,255,0.4), transparent 70%);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.link-btn:hover::before {
+  opacity: 1;
+}
+
+/* ========================= */
+/* SOCIAL MEDIA */
+/* ========================= */
+
+.social-box {
+  margin-top: 80px;
+}
+
+.social-title {
+  font-size: 30px;
+  margin-bottom: 25px;
+  text-shadow: 0 0 20px #a259ff;
+}
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.social-row a img {
+  width: 65px;
+  height: 65px;
+  transition: 0.3s;
+  filter: drop-shadow(0 0 15px #a259ff);
+}
+
+.social-row a img:hover {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-align: center;
+  opacity: 0.8;
+  font-size: 16px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ========== PASSWORD GATE ========== -->
+<div id="password-screen">
+  <img src="assets/logo.png" alt="Logo">
+  <input type="password" id="password-input" placeholder="Enter Password..." />
+  <button id="password-btn">Enter</button>
+</div>
+
+<!-- ========== MAIN CONTENT ========== -->
+<div class="container" id="main-content" style="display:none;">
+
+  <h1>ABIESCC - G71</h1>
+  <p class="subtitle">Powerful Tools – Premium UI – Megah & Mewah</p>
+
+  <a class="link-btn" href="https://g71-abiescc-deploy.vercel.app/">Deploy Vercel</a>
+  <a class="link-btn" href="https://x525v.github.io/G71-6192/">Website IQC</a>
+  <a class="link-btn" href="https://x525v.github.io/G71-5181/">Spam NGL</a>
+  <a class="link-btn" href="https://x525v.github.io/G71-7429/">Downloader</a>
+
+  <!-- ========== SOCIAL MEDIA ========== -->
+  <div class="social-box">
+    <p class="social-title">Social Media</p>
+
+    <div class="social-row">
+      <a href="https://whatsapp.com/channel/0029Vb71k0aDOQIeKCAWA02o">
+        <img src="assets/wa.png">
+      </a>
+
+      <a href="https://t.me/g71information">
+        <img src="assets/telegram.png">
+      </a>
+
+      <a href="https://instagram.com/jlmejabe">
+        <img src="assets/instagram.png">
+      </a>
+
+      <a href="https://tiktok.com/@abiescc">
+        <img src="assets/tiktok1.png">
+      </a>
+
+      <a href="https://tiktok.com/@naxszzz">
+        <img src="assets/tiktok2.png">
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    Created By <b>Abiescc</b> with Asisten AI  
+  </footer>
+
+</div>
+
+<script>
+/* ========================= */
+/* PASSWORD SYSTEM */
+/* ========================= */
+
+document.getElementById("password-btn").addEventListener("click", () => {
+  const pass = document.getElementById("password-input").value;
+  if (pass === "abiesccg71") {
+    document.getElementById("password-screen").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+  } else {
+    alert("Password salah!");
+  }
+});
+</script>
+
+</body>
+</html>    height: 120%;
     top: -10%;
     left: -10%;
     pointer-events: none;
