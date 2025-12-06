@@ -1,77 +1,139 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle at top, #3a0066, #0d0d0d);
-    overflow: hidden;
+  min-height: 100vh;
+  color: white;
 }
 
-/* Parallax Glow */
-body::before {
-    content: "";
-    position: absolute;
-    width: 800px;
-    height: 800px;
-    background: rgba(140, 0, 255, 0.3);
-    filter: blur(200px);
-    animation: float 10s infinite alternate ease-in-out;
+/* PARALLAX BACKGROUND */
+.parallax-bg {
+  background: url('assets/bg.jpg'), linear-gradient(135deg, #0b0b0d, #1a1a1f, #2d0052);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-@keyframes float {
-    0% { transform: translate(-150px, -150px); }
-    100% { transform: translate(150px, 150px); }
+/* GLASS BLUR */
+.glass {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 40px 20px;
+  box-shadow: 0 0 25px rgba(140, 0, 255, 0.3);
 }
 
-.container {
-    text-align: center;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 20px;
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 40px rgba(110, 0, 255, 0.5);
-    transform: perspective(800px) translateZ(40px);
-    transition: transform 0.4s ease;
+/* LOGIN CARD */
+.login-card {
+  max-width: 400px;
+  margin: 150px auto;
+  text-align: center;
 }
 
-.container:hover {
-    transform: perspective(800px) translateZ(80px) rotateX(5deg) rotateY(-5deg);
+.login-logo {
+  width: 130px;
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
-.title {
-    font-size: 40px;
-    color: #d6c3ff;
-    text-shadow: 0 0 20px #9f37ff;
+.login-card input {
+  width: 80%;
+  padding: 12px;
+  margin-top: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
 }
 
-.subtitle {
-    color: #b3a3d9;
-    margin-top: -10px;
-    margin-bottom: 30px;
+/* TITLE GLOW */
+.glow {
+  text-shadow: 0 0 10px #b56dff, 0 0 20px #9d30ff;
 }
 
-.btn-glass {
-    display: inline-block;
-    padding: 15px 40px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    color: white;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-decoration: none;
-    transition: 0.3s ease;
-    box-shadow: 0 0 20px rgba(150, 0, 255, 0.6);
+/* BUTTON */
+.btn {
+  display: block;
+  width: 80%;
+  margin: 15px auto;
+  padding: 15px;
+  background: #6b16ff;
+  color: white;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 25px rgba(180, 0, 255, 0.8);
+  transition: 0.35s;
 }
 
-.btn-glass:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(200, 0, 255, 1);
+/* HOVER 3D */
+.hover3d {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover3d:hover {
+  transform: perspective(600px) rotateX(8deg) rotateY(-8deg) scale(1.06);
+  box-shadow: 0 0 35px rgba(179, 0, 255, 0.9);
+}
+
+/* SCROLL ANIMATION */
+.scroll-anim {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* SOCIAL SECTION */
+.social-container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.social-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.social-item {
+  text-align: center;
+}
+
+.social-item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.logo {
+  width: 150px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+  margin: 40px 0;
+  text-align: center;
+  opacity: 0.8;
 }
