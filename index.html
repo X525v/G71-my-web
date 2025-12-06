@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>G71 Ultimate Tools</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="parallax-bg">
+
+<header class="scroll-anim">
+  <img src="assets/logo.png" class="logo">
+  <h1 class="glow">G71 Ultimate Tools</h1>
+  <p>Premium Tools – Megah – Modern – Programmer Handal</p>
+</header>
+
+<div class="container scroll-anim">
+  <div class="card glass">
+
+    <a class="btn hover3d" href="page2.html">Deploy Vercel</a>
+    <a class="btn hover3d" href="page3.html">Website IQC</a>
+    <a class="btn hover3d" href="page4.html">Spam NGL</a>
+    <a class="btn hover3d" href="page5.html">Downloader Tools</a>
+
+  </div>
+</div>
+
+
+<!-- SOSIAL MEDIA -->
+<div class="social-container scroll-anim">
+  <h3>Follow Social Media</h3>
+
+  <div class="social-box">
+
+    <a class="social-item hover3d" href="https://whatsapp.com/channel/0029Vb71k0aDOQIeKCAWA02o">
+        <img src="assets/wa.png">
+        <p>WhatsApp CH</p>
+    </a>
+
+    <a class="social-item hover3d" href="https://t.me/g71information">
+        <img src="assets/telegram.png">
+        <p>Telegram CH</p>
+    </a>
+
+    <a class="social-item hover3d" href="https://instagram.com/jlmejabe">
+        <img src="assets/instagram.png">
+        <p>Instagram</p>
+    </a>
+
+    <a class="social-item hover3d" href="https://www.tiktok.com/@abiescc">
+        <img src="assets/tiktok.png">
+        <p>Tiktok utama</p>
+    </a>
+
+    <a class="social-item hover3d" href="https://www.tiktok.com/@naxszzz">
+        <img src="assets/tiktok.png">
+        <p>Tiktok Kedua</p>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  Created by Abiescc With Asisten AI
+</footer>
+
+
+<!-- SCROLL ANIMATION -->
+<script>
+const elements = document.querySelectorAll(".scroll-anim");
+
+function showOnScroll() {
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 60) {
+      el.classList.add("show");
+    }
+  });
+}
+window.addEventListener("scroll", showOnScroll);
+showOnScroll();
+</script>
+
+</body>
+</html>
