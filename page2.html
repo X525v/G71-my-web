@@ -1,37 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Deploy Vercel</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Deploy Vercel</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="parallax-bg">
+<body class="page">
 
-<header class="scroll-anim">
-  <img src="assets/logo.png" class="logo">
-  <h2 class="glow">Deploying to Vercel</h2>
-</header>
+<div class="container">
+    <h1 class="title">Deploying Vercel</h1>
+    <p class="subtitle">Tekan tombol besar di bawah ini</p>
 
-<div class="container scroll-anim">
-  <div class="card glass">
-    <a class="btn hover3d" href="https://g71-abiescc-deploy.vercel.app/">Open Deploy Vercel</a>
-  </div>
+    <a href="https://g71-abiescc-deploy.vercel.app/" class="btn-glass">GO TO DEPLOY PAGE</a>
 </div>
-
-<footer>
-  Created by Abiescc With Asisten AI
-</footer>
-
-<script>
-const elements=document.querySelectorAll(".scroll-anim");
-function showOnScroll(){
-  elements.forEach(el=>{
-    const rect=el.getBoundingClientRect();
-    if(rect.top<window.innerHeight-60) el.classList.add("show");
-  });
-}
-window.addEventListener("scroll",showOnScroll);
-showOnScroll();
-</script>
 
 </body>
 </html>
